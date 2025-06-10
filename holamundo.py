@@ -3,7 +3,7 @@ import os
 import psycopg2
 
 app = Flask(__name__)
-app.secret_key = os.getenv('SECRET_KEY')
+app.secret_key = 'SECRET_KEY'
 
 def conectar():
     return psycopg2.connect(os.getenv('DATABASE_URL'))

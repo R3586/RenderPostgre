@@ -7,11 +7,7 @@ app = Flask(__name__)
 def conectar():
     return psycopg2.connect(os.getenv('DATABASE_URL'))
 
-@app.route("/")
-def home():
-    return "API de Flask Funciona correctamente"
-
-@app.route("/login", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         username = request.form["username"]

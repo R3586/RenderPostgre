@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Usuarios Registrados</title>
+  </head>
+  <body>
+    <h2>Bienvenido, {{ session['usuario'] }}</h2>
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    <h3>Lista de usuarios registrados:</h3>
+    <ul>
+      {% for u in usuarios %}
+      <li>ID: {{ u[0] }}, Usuario: {{ u[1] }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
